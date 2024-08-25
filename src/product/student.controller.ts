@@ -1,19 +1,14 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Post,
-} from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { studentService } from './student.service';
 
-@Controller('/bhfl')
+@Controller('/bfhl')
 export class StudentController {
   constructor(private studentService: studentService) {}
 
   @Get()
   async getProducts() {
     try {
-      return {"operation_code":1};
+      return { operation_code: 1 };
     } catch (e) {
       return Error(e);
     }
@@ -27,5 +22,4 @@ export class StudentController {
       return { isSuccess: false, message: e?.message || JSON.stringify(e) };
     }
   }
-
 }
